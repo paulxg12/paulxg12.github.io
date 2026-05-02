@@ -243,6 +243,145 @@
             align-items: center;
         }
 
+        /* SERVICES */
+        .services-header {
+            margin-bottom: 48px;
+        }
+
+        .services-header h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: 1fr; max-width: 480px; }
+        }
+
+        .service-card {
+            padding: 36px 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            transition: all var(--transition-base);
+            position: relative;
+        }
+
+        .service-card:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+        }
+
+        .service-card.popular {
+            border-color: var(--text-primary);
+            background: var(--bg-card-hover);
+        }
+
+        .service-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .service-card.popular .service-badge {
+            color: var(--text-primary);
+        }
+
+        .service-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .service-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .service-duration {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .service-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px;
+            flex-grow: 1;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-features li::before {
+            content: '→';
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .service-cta {
+            display: block;
+            text-align: center;
+            padding: 14px 20px;
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all var(--transition-fast);
+        }
+
+        .service-cta:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        .service-card.popular .service-cta {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        .service-card.popular .service-cta:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
         .hero-gradient {
             position: absolute;
             top: 100px;
@@ -996,6 +1135,7 @@
                 PRINCE RAYMOND PAUL
             </a>
             <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#oss">Open Source</a></li>
                 <li><a href="#stack">Stack</a></li>
@@ -1049,6 +1189,62 @@
                 <div class="stat">
                     <div class="stat-value" data-count="12">0</div>
                     <div class="stat-label">Public Projects</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="border-top: 1px solid var(--border-primary);">
+        <div class="container">
+            <div class="services-header reveal">
+                <div class="section-label">AI Infrastructure Services</div>
+                <h2 class="section-title">Three ways to shift.</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-badge">01 / Audit</div>
+                    <h3 class="service-title">Shift Starter</h3>
+                    <div class="service-price">$1,500</div>
+                    <div class="service-duration">Delivered in 5 days</div>
+                    <p class="service-desc">Full AI audit of your business + a 90-day roadmap. Know exactly what to automate and in what order.</p>
+                    <ul class="service-features">
+                        <li>AI process audit</li>
+                        <li>Automation priority matrix</li>
+                        <li>Tool stack recommendations</li>
+                        <li>90-day build roadmap</li>
+                    </ul>
+                    <a href="https://cal.com/prince-raymond-paul-zqkent/30min" target="_blank" class="service-cta">Get Your Audit →</a>
+                </div>
+
+                <div class="service-card popular reveal reveal-delay-2">
+                    <div class="service-badge">02 / Build · Most Popular</div>
+                    <h3 class="service-title">Shift Build</h3>
+                    <div class="service-price">From $5,000</div>
+                    <div class="service-duration">4–6 weeks</div>
+                    <p class="service-desc">We design, build and deploy your full AI infrastructure. Agents, automations, integrations — all live.</p>
+                    <ul class="service-features">
+                        <li>Everything in Starter</li>
+                        <li>Full AI stack build</li>
+                        <li>n8n / API integrations</li>
+                        <li>Team training + handoff</li>
+                    </ul>
+                    <a href="https://cal.com/prince-raymond-paul-zqkent/30min" target="_blank" class="service-cta">Start Building →</a>
+                </div>
+
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-badge">03 / Retainer</div>
+                    <h3 class="service-title">Shift Operate</h3>
+                    <div class="service-price">$2,000–$5,000/mo</div>
+                    <div class="service-duration">Ongoing</div>
+                    <p class="service-desc">Your AI stack, maintained and improved every month. We run the ops so you don't have to.</p>
+                    <ul class="service-features">
+                        <li>Monthly automation sprints</li>
+                        <li>Performance monitoring</li>
+                        <li>New workflow additions</li>
+                        <li>Monthly strategy review</li>
+                    </ul>
+                    <a href="https://cal.com/prince-raymond-paul-zqkent/30min" target="_blank" class="service-cta">Lock In Retainer →</a>
                 </div>
             </div>
         </div>
